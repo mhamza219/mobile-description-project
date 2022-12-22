@@ -1,0 +1,24 @@
+<br>
+
+	<%= link_to "Create New Mobile", new_mdescription_path, class: "btn btn-outline-primary float-right"%><br><br> 
+
+
+	<% @mdescriptions.each do |mdescription| %> 
+
+	<div class="jumbotron">
+	  <h1 class="display-11"><%= mdescription.specification %></h1>
+	  <p class="lead"><%= mdescription.price %></p>
+	  <hr class="my-4">
+	  
+	 
+	 <div class="text-center">
+	 	
+	  <%= link_to "show", mdescription_path(mdescription), class: "btn btn-outline-primary btn-lg"%>
+		<%= link_to "edit", edit_mdescription_path(mdescription),class: "btn btn-outline-success btn-lg"%>
+		<%= link_to "delete", mdescription, method: :delete, data: {confirm: "are you sure"},class: "btn btn-outline-danger btn-lg"%><br> 
+	</div>
+	 </div>
+
+
+
+	<%end%>	
